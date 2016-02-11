@@ -1,6 +1,11 @@
 module BootstrapForm
   module Helpers
     module Bootstrap
+      def button(value = nil, options = {}, &block)
+        options.reverse_merge! class: 'btn btn-default'
+        super(value, options, block)
+      end
+      
       def submit(name = nil, options = {})
         options.reverse_merge! class: 'btn btn-default'
         super(name, options)
